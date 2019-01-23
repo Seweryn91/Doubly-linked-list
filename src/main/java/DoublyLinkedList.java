@@ -31,7 +31,18 @@ public class DoublyLinkedList<T> {
 
     public Node tail() { return this.tail; }
 
-    public void add(T element) {    }
+    public void add(T element) {
+        Node newNode = new Node();
+
+        if (this.size == 0) {
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            this.tail.setNext(newNode);
+            newNode.setPrevious(this.tail);
+            this.tail = newNode;
+        }
+    }
 
     public void remove(int index) {     }
 
