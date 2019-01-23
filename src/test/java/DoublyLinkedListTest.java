@@ -27,6 +27,21 @@ class DoublyLinkedListTest {
         assertEquals("0 7 1 2 3 4", list.toString());
     }
 
+    @Test
+    @DisplayName("Test insert with improper index")
+    void testInsert_improperIndex() {
+        DoublyLinkedList list = createList(5);
+        assertThrows(IllegalArgumentException.class, () -> list.insert(-1, "7"));
+    }
+
+    @Test
+    @DisplayName("Test remove")
+    void testRemove() {
+        DoublyLinkedList list = createList(5);
+        list.remove(1);
+        assertEquals("0 2 3 4", list.toString());
+    }
+
     private DoublyLinkedList createList(int size){
         DoublyLinkedList list = new DoublyLinkedList();
         for (int i=0; i < size; i++) {
@@ -35,7 +50,5 @@ class DoublyLinkedListTest {
 
         return list;
     }
-
-
-
+    
 }
