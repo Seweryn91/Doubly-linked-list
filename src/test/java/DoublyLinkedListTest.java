@@ -66,4 +66,13 @@ class DoublyLinkedListTest {
         assertEquals("1", list.get(1).toString());
     }
 
+    @Test
+    @DisplayName("Test size")
+    void testSize() {
+        DoublyLinkedList list = createList(5);
+        assertEquals(5, list.size());
+        list.remove(1);
+        assertEquals(4, list.size());
+    }
+
 }
