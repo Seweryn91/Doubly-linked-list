@@ -58,7 +58,25 @@ public class DoublyLinkedList<T> {
         this.size--;
     }
 
-    public void insert(int index, T element) {}
+    public void insert(int index, T element) {
+        Node insertedNode = new Node(element);
+
+        if (index == 0) {
+            insertedNode.setNext(this.head);
+            this.head = insertedNode;
+        } else {
+            Node previousNode = findNode(index).previous();
+            Node nextNode = previousNode.next();
+
+            insertedNode.setNext(nextNode);
+            insertedNode.setPrevious(previousNode);
+            previousNode.setNext(insertedNode);
+            nextNode.setPrevious(insertedNode);
+        }
+
+        this.size++;
+
+    }
 
     public Node get(int index) {
         return findNode(index);
