@@ -50,20 +50,19 @@ class DoublyLinkedListTest {
         assertEquals("0 1 2 3 4 5", list.toString());
     }
 
-    private DoublyLinkedList createList(int size){
-        DoublyLinkedList list = new DoublyLinkedList();
-        for (int i=0; i < size; i++) {
-            list.add(i);
-        }
-
-        return list;
-    }
-
     @Test
     @DisplayName("Test get")
     void testGet() {
         DoublyLinkedList list = createList(5);
         assertEquals("1", list.get(1).toString());
+    }
+
+    @Test
+    @DisplayName("Test get with improper index")
+    void testGet_improperIndex() {
+        DoublyLinkedList list = createList(5);
+        assertThrows(IllegalArgumentException.class, () -> list.get(5));
+        assertThrows(IllegalArgumentException.class, () -> list.get(-3));
     }
 
     @Test
@@ -73,6 +72,14 @@ class DoublyLinkedListTest {
         assertEquals(5, list.size());
         list.remove(1);
         assertEquals(4, list.size());
+    }
+
+    private DoublyLinkedList createList(int size){
+        DoublyLinkedList list = new DoublyLinkedList();
+        for (int i=0; i < size; i++)
+            list.add(i);
+        
+        return list;
     }
 
 }
