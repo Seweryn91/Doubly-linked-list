@@ -47,6 +47,8 @@ public class DoublyLinkedList<T> {
     }
 
     public void remove(int index) {
+        checkIndex(index);
+
         if (index == 0) {
             this.head = this.head.next();
         } else {
@@ -59,6 +61,8 @@ public class DoublyLinkedList<T> {
     }
 
     public void insert(int index, T element) {
+        checkIndex(index);
+
         Node insertedNode = new Node(element);
 
         if (index == 0) {
@@ -79,6 +83,7 @@ public class DoublyLinkedList<T> {
     }
 
     public Node get(int index) {
+        checkIndex(index);
         return findNode(index);
     }
 
@@ -127,5 +132,11 @@ public class DoublyLinkedList<T> {
         }
 
         return currentNode;
+    }
+
+    private void checkIndex(int index) {
+        if (index < 0) {
+            throw new IllegalArgumentException("Index cannot be lower than 0");
+        }
     }
 }
