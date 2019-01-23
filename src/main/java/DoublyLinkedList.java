@@ -12,7 +12,7 @@ public class DoublyLinkedList<T> {
 
         public Node next() { return this.next; }
 
-        public T getContent() {      }
+        public T getContent() { return this.content; }
 
         public void setPrevious() {      }
 
