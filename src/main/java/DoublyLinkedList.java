@@ -94,7 +94,7 @@ public class DoublyLinkedList<T> {
         return stringBuilder.toString().trim();
     }
 
-    public Node popNode(Node node) {
+    public void popNode(Node node) {
         Node precedingNode = node.previous();
         Node nextNode = node.next();
 
