@@ -16,7 +16,7 @@ public class DoublyLinkedList<T> {
 
         public void setPrevious(Node previous) { this.previous = previous; }
 
-        public void setNext() {        }
+        public void setNext(Node next) { this.next = next; }
 
         @Override
         public String toString() { return content.toString(); }
