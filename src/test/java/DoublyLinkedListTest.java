@@ -59,4 +59,11 @@ class DoublyLinkedListTest {
         return list;
     }
 
+    @Test
+    @DisplayName("Test get")
+    void testGet() {
+        DoublyLinkedList list = createList(5);
+        assertEquals("1", list.get(1).toString());
+    }
+
 }
