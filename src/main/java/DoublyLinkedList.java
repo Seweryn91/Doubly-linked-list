@@ -8,9 +8,9 @@ public class DoublyLinkedList<T> {
 
         Node(T content) { this.content = content; }
 
-        public Node previous() {     }
+        public Node previous() { return this.previous; }
 
-        public Node next() {     }
+        public Node next() { return this.next; }
 
         public T getContent() {      }
 
