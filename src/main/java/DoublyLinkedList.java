@@ -56,7 +56,13 @@ public class DoublyLinkedList<T> {
 
     public String toString() {     }
 
-    public Node popNode(Node node) { }
+    public Node popNode(Node node) {
+        Node precedingNode = node.previous();
+        Node nextNode = node.next();
+
+        precedingNode.setNext(nextNode);
+        nextNode.setPrevious(precedingNode);
+    }
 
     public void setTail() {
         if (this.head == null) {
