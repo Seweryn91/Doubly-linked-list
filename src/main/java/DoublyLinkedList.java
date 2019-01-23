@@ -27,9 +27,9 @@ public class DoublyLinkedList<T> {
     private Node tail;
     private int size = 0;
 
-    public Node head() {     }
+    public Node head() { return this.head; }
 
-    public Node tail() {     }
+    public Node tail() { return this.tail; }
 
     public void add(T element) {    }
 
