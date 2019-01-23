@@ -107,6 +107,23 @@ public class DoublyLinkedList<T> {
         nextNode.setPrevious(precedingNode);
     }
 
+    public int size() {
+        int elementsCount = 0;
+        Node currentNode = this.head;
+
+        if (this.head == null)
+            return 0;
+
+        else {
+            while (currentNode != null) {
+                currentNode = currentNode.next();
+                elementsCount++;
+
+            }
+            return elementsCount;
+        }
+    }
+
     public void setTail() {
         if (this.head == null) {
             this.tail = null;
