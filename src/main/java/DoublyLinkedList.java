@@ -32,7 +32,7 @@ public class DoublyLinkedList<T> {
     public Node tail() { return this.tail; }
 
     public void add(T element) {
-        Node newNode = new Node();
+        Node newNode = new Node(element);
 
         if (this.size == 0) {
             this.head = newNode;
