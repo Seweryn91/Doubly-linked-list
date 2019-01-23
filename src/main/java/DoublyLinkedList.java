@@ -47,7 +47,15 @@ public class DoublyLinkedList<T> {
     }
 
     public void remove(int index) {
+        if (index == 0) {
+            this.head = this.head.next();
+        } else {
+            Node removedNode = findNode(index);
+            popNode(removedNode);
+        }
 
+        setTail();
+        this.size--;
     }
 
     public void insert(int index, T element) {}
