@@ -82,7 +82,17 @@ public class DoublyLinkedList<T> {
         return findNode(index);
     }
 
-    public String toString() {     }
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        Node currentNode = this.head;
+
+        while (currentNode != null) {
+            stringBuilder.append(currentNode.getContent()).append(" ");
+            currentNode = currentNode.next();
+        }
+
+        return stringBuilder.toString().trim();
+    }
 
     public Node popNode(Node node) {
         Node precedingNode = node.previous();
