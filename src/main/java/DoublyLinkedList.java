@@ -42,9 +42,13 @@ public class DoublyLinkedList<T> {
             newNode.setPrevious(this.tail);
             this.tail = newNode;
         }
+
+        this.size++;
     }
 
-    public void remove(int index) {     }
+    public void remove(int index) {
+
+    }
 
     public void insert(int index, T element) {}
 
@@ -56,5 +60,15 @@ public class DoublyLinkedList<T> {
 
     public Node setTail() {}
 
-    private Node findNode(int index){}
+    private Node findNode(int index) {
+        int nodeIndex = 0;
+        Node currentNode = this.head;
+
+        while (nodeIndex != index) {
+            currentNode = currentNode.next();
+            nodeIndex++;
+        }
+
+        return currentNode;
+    }
 }
