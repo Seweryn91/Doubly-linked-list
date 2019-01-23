@@ -42,6 +42,14 @@ class DoublyLinkedListTest {
         assertEquals("0 2 3 4", list.toString());
     }
 
+    @Test
+    @DisplayName("Test add")
+    void testAdd() {
+        DoublyLinkedList list = createList(5);
+        list.add(5);
+        assertEquals("0 1 2 3 4 5", list.toString());
+    }
+
     private DoublyLinkedList createList(int size){
         DoublyLinkedList list = new DoublyLinkedList();
         for (int i=0; i < size; i++) {
@@ -50,5 +58,5 @@ class DoublyLinkedListTest {
 
         return list;
     }
-    
+
 }
