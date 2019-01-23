@@ -52,7 +52,9 @@ public class DoublyLinkedList<T> {
 
     public void insert(int index, T element) {}
 
-    public Node get(int index) {    }
+    public Node get(int index) {
+        return findNode(index);
+    }
 
     public String toString() {     }
 
