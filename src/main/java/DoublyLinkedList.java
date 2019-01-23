@@ -14,7 +14,7 @@ public class DoublyLinkedList<T> {
 
         public T getContent() { return this.content; }
 
-        public void setPrevious() {      }
+        public void setPrevious(Node previous) { this.previous = previous; }
 
         public void setNext() {        }
 
