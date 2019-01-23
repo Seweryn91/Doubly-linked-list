@@ -58,7 +58,20 @@ public class DoublyLinkedList<T> {
 
     public Node popNode(Node node) { }
 
-    public Node setTail() {}
+    public void setTail() {
+        if (this.head == null) {
+            this.tail = null;
+            return;
+        }
+
+        Node currentNode = this.head;
+
+        while (currentNode.next() != null) {
+            currentNode = currentNode.next();
+        }
+
+        this.tail = currentNode;
+    }
 
     private Node findNode(int index) {
         int nodeIndex = 0;
