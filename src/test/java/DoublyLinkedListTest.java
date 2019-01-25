@@ -58,10 +58,17 @@ class DoublyLinkedListTest {
     }
 
     @Test
-    @DisplayName("Test get with improper index")
-    void testGet_improperIndex() {
+    @DisplayName("Test get with too high index")
+    void testGet_improperIndex_tooHigh() {
         DoublyLinkedList list = createList(5);
         assertThrows(IllegalArgumentException.class, () -> list.get(5));
+        
+    }
+
+    @Test
+    @DisplayName("Test get with negative index")
+    void testGet_improperIndex_negative() {
+        DoublyLinkedList list = createList(5);
         assertThrows(IllegalArgumentException.class, () -> list.get(-3));
     }
 
@@ -78,7 +85,7 @@ class DoublyLinkedListTest {
         DoublyLinkedList list = new DoublyLinkedList();
         for (int i=0; i < size; i++)
             list.add(i);
-        
+
         return list;
     }
 
